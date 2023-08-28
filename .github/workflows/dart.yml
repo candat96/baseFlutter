@@ -2,9 +2,9 @@ name: Flutter build apk
 
 on:
   push:
-    branches: ['develop']
+    branches: ['main']
   pull_request:
-    branches: ['develop']
+    branches: ['main']
 
 jobs:
   build:
@@ -38,10 +38,3 @@ jobs:
           overwrite: 'true'
           mimetype: 'application/vnd.android.packages-archive'
 
-      - name: Send noti to telegram
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: App MobiClinic bản mới này các em
-          socks5: https://drive.google.com/drive/u/0/folders/1H54qT0nUhJks0hrZiZSroT1C5i5zSJJh
